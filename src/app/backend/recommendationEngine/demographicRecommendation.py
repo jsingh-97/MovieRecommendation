@@ -16,7 +16,10 @@ import numpy as np
 from flask import request, jsonify
 import json
 def getMoviesList():
+    #This can be downloaded from here and save in your Project root folder
+    #https://www.kaggle.com/tmdb/tmdb-movie-metadata?select=tmdb_5000_credits.csv
     df1=pd.read_csv('/home/jaswinder/PycharmProjects/tmdb_5000_credits.csv')
+    #https://www.kaggle.com/tmdb/tmdb-movie-metadata?select=tmdb_5000_movies.csv
     df2=pd.read_csv('/home/jaswinder/PycharmProjects/tmdb_5000_movies.csv')
     df1.columns = ['id','tittle','cast','crew']
     # merging df2 and df1 dataset into df2 at movie id (id is primary key in both these tables )
