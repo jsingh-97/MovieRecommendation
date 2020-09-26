@@ -26,7 +26,7 @@ def getSimilarMovies(title):
     #We are now in a position to create our "metadata soup", which is a string that contains all the metadata that we want to feed to our vectorizer (namely actors, director and keywords).
     def create_soup(x):
         return ' '.join(x['keywords']) + ' ' + ' '.join(x['cast']) + ' ' + x['director'] + ' ' + ' '.join(x['genres'])
-
+    # We can increase the weight of the director , by adding the feature multiple times in the soup.
     df2['soup'] = df2.apply(create_soup, axis=1)
     count = CountVectorizer(stop_words='english')
     count_matrix = count.fit_transform(df2['soup'])
@@ -69,7 +69,7 @@ def get_recommendations(title, cosine_sim,df2,indices):
     # Get the index of the movie that matches the title
     idx = indices[title]
 
-    # Get the pairwsie similarity scores of all movies with that movie
+    # Get the pairwise similarity scores of all movies with that movie
     sim_scores = list(enumerate(cosine_sim[idx]))
 
     # Sort the movies based on the similarity scores
