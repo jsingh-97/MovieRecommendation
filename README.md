@@ -36,8 +36,8 @@ vote_count - the count of votes recieved.
 
 Functions of get_recommendations Function defined in contentRecommendation
 We are now in a good position to define our recommendation function. These are the following steps we'll follow :-
-Get the index of the movie given its title.
-Get the list of cosine similarity scores for that particular movie with all movies. Convert it into a list of tuples where the first element is its position and the second is the similarity score.
-Sort the aforementioned list of tuples based on the similarity scores; that is, the second element.
-Get the top 10 elements of this list. Ignore the first element as it refers to self (the movie most similar to a particular movie is the movie itself).
-Return the titles corresponding to the indices of the top elements.
+1.Get the index of the movie given its title.
+2.Get the list of cosine similarity scores for that particular movie with all movies. Convert it into a list of tuples where the first element is its position and the second is the similarity score.
+3.Sort the aforementioned list of tuples based on the similarity scores; that is, the second element.
+4.Get the top 10 elements of this list. Ignore the first element as it refers to self (the movie most similar to a particular movie is the movie itself).
+5.Return the titles corresponding to the indices of the top elements.
